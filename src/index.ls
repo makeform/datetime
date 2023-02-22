@@ -2,7 +2,7 @@ module.exports =
   pkg:
     name: "@makeform/date", extend: name: '@makeform/common'
     dependencies: [
-      {name: "dayjs", path: "index.js"}
+      {name: "dayjs", path: "dayjs.min.js"}
       {name: "lddatetimepicker"}
       {name: "lddatetimepicker", path: "index.min.css", type: \css, global: true}
     ]
