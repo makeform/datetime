@@ -13,9 +13,7 @@ mod = ({root, ctx, data, parent, t, i18n}) ->
   config:
     time: enabled: type: \boolean
   init: ->
-    @on \change, ~>
-      @view.get(\input).value = it or ''
-      @view.render <[input content]>
+    @on \change, ~> @view.render <[input content]>
     handler = ({node}) ~> @value node.value
     @view = view = new ldview do
       root: root
@@ -31,6 +29,7 @@ mod = ({root, ctx, data, parent, t, i18n}) ->
       handler:
         content: ({node}) ~> if @is-empty! => 'n/a' else node.innerText = @content!
         input: ({node}) ~>
+          node.value = (@value! or '')
           readonly = !!@mod.info.meta.readonly
           if readonly => node.setAttribute \readonly, true
           else node.removeAttribute \readonly
