@@ -1,5 +1,10 @@
 # Change Logs
 
+## v1.0.4
+
+ - add `error` and `note` selector
+
+
 ## v1.0.3
 
  - fix bug: value of input box isn't consistent with value of the corresponding widget.
