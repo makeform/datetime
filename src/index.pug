@@ -1,9 +1,12 @@
 div
-  .form-group(plug="widget",ld="base")
+  .form-group.has-tips(plug="widget",ld="base error-root")
     div(ld="display",data-display="block")
       label(ld="label")
       span.text-danger.ml-2(ld="is-required") *
     .text-sm.text-muted(ld="display", data-display="block"): div(ld="desc", style="margin:-.6em 0 .7em")
-    input.form-control.m-edit(type="text",ld="input")
+    .m-edit
+      input.form-control(type="text",ld="input")
+      .hover-tip.tip-sm: div(ld-each="error")
+    .m-edit(ld="display",data-display="block"): .text-danger.text-sm.mt-2.note(ld-each="note")
     .m-view: div(ld="content")
   script(type="@plotdb/block"): include:lsc index.ls
